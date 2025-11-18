@@ -1,11 +1,13 @@
-.PHONY: requirements migrations start stop
+.PHONY: prereqs requirements build migrations start stop
 
 SHELL := /bin/bash
 include .env
 
-requirements:
+prereqs:
 	sudo apt install nodejs npm
 	sudo npm install -g pm2
+
+requirements:
 	npm install
 	npm install pg --save
 
